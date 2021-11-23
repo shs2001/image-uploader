@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Images Uploader</title>
-    <script src="jquery.min.js"></script>
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="col-md-6 wrapper">
@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 preview">
-                    <img src="preview.jpg" class="img-fluid preimage" id="preview" alt="preview image">
+                    <img src="image/preview.jpg" class="img-fluid preimage" id="preview" alt="preview image">
                 </div>
             </div>
         </form>
@@ -91,7 +91,7 @@
                 success : function(data) {
                     $('#imgForm')[0].reset();
                     $('.custom-file-label').html('Choose File');
-                    // $('.preview').html('<img src="preview.jpg" class="img-fluid preimage" id="preview" alt="preview image">');
+                    // $('.preview').html('<img src="image/preview.jpg" class="img-fluid preimage" id="preview" alt="preview image">');
                     if(data == 1){
                         alert("Error File type or too large !");
                     }else if(data == 2){
