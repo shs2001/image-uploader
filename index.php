@@ -28,7 +28,9 @@
                     </div>
                     <div class="copy text-center d-none">
                         <input type="text" class="form-control copyInput mb-2" id="copyInput" placeholder="Copy your image link">
-                        <button type="button" class="btn btn-primary copyBTN mb-3">Copy</button>
+                        <a href="#" target="_blank" class="btn btn-info viewBtn mb-3">View</a>
+                        <button type="button" class="btn btn-primary copyBTN mb-3">Copy Link</button>
+                        <a href="#" download class="btn btn-success downloadBtn mb-3">Download</a>
                     </div>
                 </div>
                 <div class="col-md-4 preview">
@@ -92,14 +94,16 @@
                     $('#imgForm')[0].reset();
                     $('.custom-file-label').html('Choose File');
                     // $('.preview').html('<img src="image/preview.jpg" class="img-fluid preimage" id="preview" alt="preview image">');
+
                     if(data == 1){
                         alert("Error File type or too large !");
                     }else if(data == 2){
                         alert("Something went Wrong !");
-
                     }else{
                         $(".copy").removeClass('d-none');
                         $('.copyInput').val(data);
+                        $('.viewBtn').attr('href',data);
+                        $('.downloadBtn').attr('href',data);
                     }
                 }
             });

@@ -10,7 +10,7 @@
         $temp = explode(".", $_FILES["fileName"]["name"]);
         $extension = end($temp);
 
-        $newName = $filename.'-'.time().rand(0,10000).'.'.$extension;
+        $newName = $temp[0].'-'.time().rand(0,10000).'.'.$extension;
 
         if ((($_FILES["fileName"]["type"] == "image/gif")
         || ($_FILES["fileName"]["type"] == "image/jpeg")
@@ -27,7 +27,7 @@
                 $server = $_SERVER['SERVER_NAME'];
                 $domain = $_SERVER['REQUEST_URI'];
                 $domain = explode('/',$domain)[1];
-                echo $server.'/'.$domain.'/'."img/$newName";
+                echo "http://".$server.'/'.$domain.'/'."img/$newName";
             } else {
                 echo 2;
             }
